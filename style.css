@@ -1,0 +1,261 @@
+:root {
+  --color1: red;
+  --color2: blue;
+  --color3: orange;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.container > div {
+  /* border: 1px solid var(--color1); */
+  /* margin-top: 10px; */
+}
+.topBar {
+  background-color: #a6e4b6;
+  font-family: "Open Sans" system-ui -apple-system "Segoe UI" Roboto "Helvetica Neue"
+    Arial "Noto Sans" "Liberation Sans" sans-serif "Apple Color Emoji" "Segoe UI Emoji"
+    "Segoe UI Symbol" "Noto Color Emoji";
+  font-size: 14px;
+  font-weight: 500;
+}
+.heroBanner {
+  background-image: url("./images/food2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.category {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+@media (min-width: 320px) {
+  .parent-space {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 5.5vh auto 25vh auto auto auto auto;
+    grid-template-areas:
+      "topBar"
+      "header"
+      "heroBanner"
+      "category"
+      "featuredTrails"
+      "foodSpot"
+      "footer";
+  }
+
+  .filterBar {
+    display: none;
+  }
+
+  .addSpot {
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+  }
+
+  .contact-info {
+    gap: 3vw;
+    padding: 10px 0;
+    /* font-size: 13px; */
+  }
+  
+  #phoneCode {
+    display: none;
+  }
+  #carouselExampleCaptions .carousel-item {
+  height: 50vh; /* Set your desired height */
+}
+.sub-heading-text {
+  font-size: 20px;
+    padding: 8px 80px;
+    background-color: #1f85e6;
+    color: white;
+    border-radius: 20px;
+    display: inline-block;
+    text-align: center;
+    line-height: 1.2;
+    height: auto;
+    min-height: 40px;
+    font-weight: 600;
+    margin: 40px auto;
+    width: fit-content;
+}
+
+}
+
+@media (min-width: 375px) {
+  .parent-space {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 4.5vh auto 30vh auto auto auto auto;
+    grid-template-areas:
+      "topBar"
+      "header"
+      "heroBanner"
+      "category"
+      "featuredTrails"
+      "foodSpot"
+      "footer";
+  }
+
+  .filterBar {
+    display: none;
+  }
+
+  .addSpot {
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+  }
+  .topBar {
+    font-size: 13px;
+  }
+
+  .contact-info {
+    gap: 5vw;
+  }
+}
+
+@media (min-width: 425px) {
+  .contact-info {
+    justify-content: space-between;
+    font-size: 13px;
+  }
+  #phoneCode {
+    display: inline;
+  }
+}
+
+@media (min-width: 768px) {
+  .parent-space {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 4.5vw 8vh 40vh auto auto auto auto auto;
+    grid-template-areas:
+      "topBar"
+      "header"
+      "heroBanner"
+      "category"
+      "featuredTrails"
+      "foodSpot"
+      "addSpot"
+      "footer";
+  }
+
+  .filterBar {
+    display: none;
+  }
+  .contact-info {
+    gap: 25px;
+    font-size: 14px;
+  }
+  .sub-heading-text {
+    margin: 80px auto;
+}
+}
+
+@media (min-width: 1024px) {
+  .parent-space {
+    display: grid;
+    grid-template-columns: 0.3fr 0.8fr;
+    grid-template-rows: 4.5vh 8vh 80vh auto auto auto auto;
+    grid-template-areas:
+      "topBar topBar"
+      "header header"
+      "heroBanner heroBanner"
+      "category category"
+      "featuredTrails featuredTrails"
+      "foodSpot foodSpot"
+      "footer footer";
+  }
+
+
+  .filterBar {
+    display: block;
+  }
+
+  .addSpot {
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+  }
+  /* .sub-heading-text {
+    font-size: 20px;
+    padding: 8px 80px;
+    background-color: #1f85e6;
+    color: white;
+    border-radius: 20px;
+    display: inline-block;
+    text-align: center;
+    line-height: 1.2;
+    height: auto;
+    min-height: 40px;
+    font-weight: 600;
+    margin: 0 auto;
+    width: fit-content;
+  } */
+  .header{
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+  #carouselExampleCaptions .carousel-item {
+  height: 70vh; /* Set your desired height */
+}
+  
+}
+.navbar{
+    height: 100%;
+  }
+
+.header {
+  grid-area: header;
+}
+
+.heroBanner {
+  grid-area: heroBanner;
+}
+
+.category {
+  grid-area: category;
+  /* background-image: url('images/newari.jpg'); */
+  background-attachment: fixed;
+}
+
+.featuredTrails {
+  grid-area: featuredTrails;
+  text-align: center;
+}
+
+.filterBar {
+  grid-area: filterBar;
+}
+
+.foodSpot {
+  grid-area: foodSpot;
+  text-align: center;
+
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.addSpot {
+  grid-area: addSpot;
+}
+.topBar {
+  grid-area: topBar;
+}
+
+
+#carouselExampleCaptions .carousel-item img {
+  object-fit: cover; /* Ensures image fills the container without distortion */
+  height: 100%; /* Match the carousel-item height */
+  width: 100%; /* Full width */
+}
