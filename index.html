@@ -6,11 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hidden Bites Nepal</title>
 
-    <link rel="stylesheet" href="styles/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
   <!-- Font Awesome v5.15.4 (CDN) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-<script src="styles/bootstrap.bundle.min.js"  integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+  <script src="styles/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -80,44 +81,101 @@
 
 
     <div class="category container">
-        <h2 class="text-center sub-heading-text">Categories</h2>
+      <h2 class="text-center sub-heading-text">Categories</h2>
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 justify-content-center" id="category-list">
       </div>
     </div>
 
-      <div class="featuredTrails">
-        <h2 class="text-center sub-heading-text ">Featured Trails</h2>
-        <div id="carouselExampleCaptions" class="carousel slide">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-              aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-              aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-              aria-label="Slide 3"></button>
-          </div>
-          <div class="carousel-inner" id="carousel-parent">
-
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+    <div class="featuredTrails">
+      <h2 class="text-center sub-heading-text ">Featured Trails</h2>
+      <div id="carouselExampleCaptions" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
         </div>
+        <div class="carousel-inner" id="carousel-parent">
 
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
-    <!-- <div class="filterBar">Filter</div> -->
-    <div class="foodSpot">
-      <h2 class="text-center sub-heading-text">Food Spots</h2>
 
     </div>
-    <div class="addSpot">Add Spot</div>
+    <!-- <div class="filterBar">Filter</div> -->
+
+
+    <div class="foodSpot">
+      <h2 class="text-center sub-heading-text ">Food Spots</h2>
+
+      <div class="container " id="foodSpotCardContainer">
+        <div class="row g-4 justify-content-center justify-content-lg-start">
+
+
+<div class="card col-12 col-md-6 col-lg-4" style="width: 18rem;">
+  <img src="images/newari.jpg" class="card-img-top" alt="Newari" style="width: 100%; height: clamp(160px, 22vw, 220px); object-fit: cover;">
+  <div class="card-body d-flex flex-column">
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+    <div class="d-flex justify-content-between align-items-center mt-auto">
+      <span class="fw-bold">Rs 350</span>
+      <a href="#" class="btn btn-sm btn-outline-primary">View more</a>
+    </div>
+  </div>
+  
+</div>
+
+<div class="card col-12 col-md-6 col-lg-4" style="width: 18rem;">
+  <img src="images/momo.jpg" class="card-img-top" alt="MoMo" style="width: 100%; height: clamp(160px, 22vw, 220px); object-fit: cover;">
+  <div class="card-body d-flex flex-column">
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+    <div class="d-flex justify-content-between align-items-center mt-auto">
+      <span class="fw-bold">Rs 180</span>
+      <a href="#" class="btn btn-sm btn-outline-primary">View more</a>
+    </div>
+  </div>
+  
+</div>
+
+<div class="card col-12 col-md-6 col-lg-4" style="width: 18rem;">
+  <img src="images/thakali.jpeg" class="card-img-top" alt="Thakali" style="width: 100%; height: clamp(160px, 22vw, 220px); object-fit: cover;">
+  <div class="card-body d-flex flex-column">
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+    <div class="d-flex justify-content-between align-items-center mt-auto">
+      <span class="fw-bold">Rs 450</span>
+      <a href="#" class="btn btn-sm btn-outline-primary">View more</a>
+    </div>
+  </div>
+  
+</div>
+
+
+        </div>
+
+
+      </div>
+
+    </div>
+    <div class="addSpot container-fluid" id="addSpot">
+      <h2 class="text-center sub-heading-text ">Contribute your Opinion</h2>
+
+      <div class=" addPlace container rounded hover-zoom " id="addPlace">
+        <p>Know a hidden Gem? <br> Add your Spot Now.</p><i class="fas fa-plus d-md-none"></i>
+
+      </div>
+
+      
+    </div>
     <div class="footer">
       <footer class="bg-dark text-light pt-4">
         <div class="container">
@@ -224,19 +282,16 @@
     var category_list = document.getElementById("category-list");
     category.forEach(cat => {
       const item = document.createElement("div");
-      item.className = "col text-center";
+      item.className = "col text-center ";
 
       item.innerHTML = `
-    <div class="position-relative p-3 rounded category-item" 
+    <div class="position-relative p-3 rounded category-item hover-zoom hover-bg-zoom" 
          style="background-image: url('${cat.bgImage}');
-                background-size: cover;
-                background-position: center;
                 height: 150px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                flex-direction: column;
-                overflow: hidden;">
+                flex-direction: column;">
       
       <!-- Gradient Overlay -->
       <div class="position-absolute top-0 start-0 w-100 h-100" 
