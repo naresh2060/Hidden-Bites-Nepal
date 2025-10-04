@@ -1,0 +1,133 @@
+[
+    {
+      "id": "himalayan-momo-house",
+      "name": "Himalayan Momo House",
+      "headline": "Fresh hand-folded momos and soups",
+      "cuisine": ["Nepalese", "Fast Casual"],
+      "tags": ["momo", "dumpling", "soup"],
+      "status": "open",
+      "rating": 3.5,
+      "reviewsCount": 124,
+      "priceRange": "Rs 200 - Rs 500",
+      "priceMin": 200,
+      "priceMax": 500,
+      "distanceKm": 0.8,
+      "image": "images/momo.jpg",
+      "amenities": ["Wi-Fi","Delivery", "Takeaway", "Dine-in", "Outdoor"],
+      "features": ["Outdoor Seating", "Family Friendly", "Pet Friendly"],
+      "menuHighlights": [
+        { "name": "Chicken Momo", "price": 250 },
+        { "name": "Veg Momo", "price": 200 },
+        { "name": "Hot Soup", "price": 150 }
+      ],
+      "offers": ["Buy 1 Get 1 Free on Tuesdays", "10% off for students"],
+      "paymentOptions": ["Cash", "eSewa", "Khalti", "Card"],
+      "accessibility": ["Wheelchair Accessible", "Parking Available"],
+      "address": {
+        "line1": "Thamel Rd",
+        "city": "Kathmandu",
+        "country": "Nepal"
+      },
+      "hours": {
+        "mon-fri": "10:00 - 21:30",
+        "sat": "10:00 - 22:00",
+        "sun": "11:00 - 21:00"
+      },
+      "contact": {
+        "phone": "+977-9812345678",
+        "website": "http://himalayanmomo.com",
+        "maps": "https://goo.gl/maps/example"
+      },
+      "social": {
+        "facebook": "https://facebook.com/himalayanmomo",
+        "instagram": "https://instagram.com/himalayanmomo"
+      },
+      "coordinates": { "lat": 27.7172, "lng": 85.3240 }
+    },
+    {
+      "id": "thakali-kitchen",
+      "name": "Thakali Kitchen",
+      "headline": "Traditional thali with regional flavors",
+      "cuisine": ["Traditional", "Family Style"],
+      "tags": ["thakali", "thali", "rice"],
+      "status": "closing-soon",
+      "rating": 4.0,
+      "reviewsCount": 301,
+      "priceRange": "Rs 350 - Rs 900",
+      "priceMin": 350,
+      "priceMax": 900,
+      "distanceKm": 2.1,
+      "image": "images/thakali.jpeg",
+      "amenities": ["Dine-in", "Family Friendly", "Map"],
+      "features": ["Large Group Friendly", "Traditional Seating"],
+      "menuHighlights": [
+        { "name": "Thakali Thali Set", "price": 550 },
+        { "name": "Mutton Curry", "price": 700 },
+        { "name": "Seasonal Pickles", "price": 200 }
+      ],
+      "offers": ["Free soft drink with thali on weekdays"],
+      "paymentOptions": ["Cash", "Card", "eSewa"],
+      "accessibility": ["Parking Available"],
+      "address": {
+        "line1": "Pulchowk",
+        "city": "Lalitpur",
+        "country": "Nepal"
+      },
+      "hours": { "mon-sun": "09:00 - 22:00" },
+      "contact": {
+        "phone": "+977-9800000000",
+        "website": "",
+        "maps": ""
+      },
+      "social": {
+        "facebook": "https://facebook.com/thakalikitchen",
+        "instagram": "https://instagram.com/thakalikitchen"
+      },
+      "coordinates": { "lat": 27.6720, "lng": 85.3188 }
+    },
+    {
+      "id": "chiya-ghar",
+      "name": "Chiya Ghar",
+      "headline": "Cozy cafe with artisan breads",
+      "cuisine": ["Cafe", "Bakery"],
+      "tags": ["tea", "bakery", "pastry"],
+      "status": "new",
+      "rating": 3.0,
+      "reviewsCount": 23,
+      "priceRange": "Rs 80 - Rs 300",
+      "priceMin": 80,
+      "priceMax": 300,
+      "distanceKm": 0.5,
+      "image": "images/tea.jpg",
+      "amenities": ["Wi-Fi", "Dine-in", "Takeaway"],
+      "features": ["Quiet Corners", "Work Friendly"],
+      "menuHighlights": [
+        { "name": "Masala Chiya", "price": 100 },
+        { "name": "Croissant", "price": 150 },
+        { "name": "Chocolate Brownie", "price": 200 }
+      ],
+      "offers": ["Buy 2 get 1 free pastries after 6 PM"],
+      "paymentOptions": ["Cash", "eSewa", "Khalti"],
+      "accessibility": ["Wheelchair Accessible"],
+      "address": {
+        "line1": "Jhamsikhel",
+        "city": "Lalitpur",
+        "country": "Nepal"
+      },
+      "hours": {
+        "mon-fri": "07:00 - 19:00",
+        "sat-sun": "08:00 - 20:00"
+      },
+      "contact": {
+        "phone": "+977-9801111111",
+        "website": "",
+        "maps": ""
+      },
+      "social": {
+        "facebook": "https://facebook.com/chiyaghar",
+        "instagram": "https://instagram.com/chiyaghar"
+      },
+      "coordinates": { "lat": 27.6724, "lng": 85.3100 }
+    }
+  ]
+  

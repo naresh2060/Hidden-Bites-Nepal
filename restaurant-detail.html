@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Details - Hidden Bites Nepal</title>
+  
+  <link rel="stylesheet" href="styles/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  
+  <style>
+    .hero-image {
+      height: 400px;
+      object-fit: cover;
+      width: 100%;
+    }
+    .detail-card {
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .amenity-badge {
+      background-color: #f8f9fa;
+      border: 1px solid #dee2e6;
+      border-radius: 20px;
+      padding: 8px 16px;
+      margin: 4px;
+      display: inline-block;
+    }
+    .amenity-badge i {
+      color: #1f85e6;
+      margin-right: 8px;
+    }
+    .rating-stars {
+      color: #f4c150;
+    }
+    .price-highlight {
+      font-size: 1.2em;
+      color: #28a745;
+      font-weight: bold;
+    }
+    .back-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="index.html" class="btn btn-outline-secondary back-btn">
+    <i class="fas fa-arrow-left"></i> Back
+  </a>
+
+  <div class="container-fluid p-0">
+    <!-- Hero Image -->
+    <div class="position-relative">
+      <img id="heroImage" class="hero-image" src="" alt="Restaurant" />
+      <div class="position-absolute top-0 start-0 w-100 h-100" 
+           style="background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);"></div>
+      <div class="position-absolute bottom-0 start-0 text-white p-4">
+        <h1 id="restaurantName" class="display-4 fw-bold mb-2"></h1>
+        <p id="restaurantHeadline" class="fs-5 mb-3"></p>
+        <div class="d-flex align-items-center gap-3">
+          <div class="rating-stars" id="ratingStars"></div>
+          <span id="ratingText" class="text-white"></span>
+          <span id="statusBadge" class="badge fs-6"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container py-5">
+      <div class="row g-4">
+        <!-- Main Content -->
+        <div class="col-lg-8">
+          <!-- About Section -->
+          <div class="card detail-card mb-4">
+            <div class="card-body p-4">
+              <h3 class="card-title mb-3">
+                <i class="fas fa-info-circle text-primary me-2"></i>About
+              </h3>
+              <p id="restaurantDescription" class="card-text">
+                Experience authentic flavors in a cozy atmosphere. This restaurant offers a unique dining experience with traditional recipes passed down through generations.
+              </p>
+              <div class="row mt-4">
+                <div class="col-md-6">
+                  <h5>Cuisine</h5>
+                  <p id="cuisineList" class="text-muted"></p>
+                </div>
+                <div class="col-md-6">
+                  <h5>Tags</h5>
+                  <p id="tagsList" class="text-muted"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Menu Highlights -->
+          <div class="card detail-card mb-4">
+            <div class="card-body p-4">
+              <h3 class="card-title mb-3">
+                <i class="fas fa-utensils text-primary me-2"></i>Menu Highlights
+              </h3>
+              <div id="menuHighlights" class="row">
+                <!-- Menu items will be populated here -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Amenities -->
+          <div class="card detail-card mb-4">
+            <div class="card-body p-4">
+              <h3 class="card-title mb-3">
+                <i class="fas fa-star text-primary me-2"></i>Amenities & Features
+              </h3>
+              <div id="amenitiesList">
+                <!-- Amenities will be populated here -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-lg-4">
+          <!-- Quick Info -->
+          <div class="card detail-card mb-4">
+            <div class="card-body p-4">
+              <h4 class="card-title mb-3">Quick Info</h4>
+              
+              <div class="mb-3">
+                <h6><i class="fas fa-map-marker-alt text-primary me-2"></i>Location</h6>
+                <p id="address" class="text-muted mb-0"></p>
+                <small class="text-muted" id="distance"></small>
+              </div>
+
+              <div class="mb-3">
+                <h6><i class="fas fa-clock text-primary me-2"></i>Hours</h6>
+                <div id="hoursList">
+                  <!-- Hours will be populated here -->
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <h6><i class="fas fa-phone text-primary me-2"></i>Contact</h6>
+                <p id="phone" class="text-muted mb-1"></p>
+                <p id="website" class="text-muted mb-0"></p>
+              </div>
+
+              <div class="mb-3">
+                <h6><i class="fas fa-tag text-primary me-2"></i>Price Range</h6>
+                <p id="priceRange" class="price-highlight"></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="card detail-card">
+            <div class="card-body p-4 text-center">
+              <h5 class="card-title mb-3">Get Directions</h5>
+              <a id="directionsBtn" href="#" class="btn btn-primary btn-lg w-100 mb-3" target="_blank">
+                <i class="fas fa-directions me-2"></i>Directions
+              </a>
+              <a id="callBtn" href="#" class="btn btn-outline-primary btn-lg w-100 mb-2">
+                <i class="fas fa-phone me-2"></i>Call Now
+              </a>
+              <a id="websiteBtn" href="#" class="btn btn-outline-secondary btn-lg w-100" target="_blank">
+                <i class="fas fa-globe me-2"></i>Visit Website
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Get restaurant ID from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const restaurantId = urlParams.get('id');
+
+    // Helper function to generate star icons
+    function generateStars(rating) {
+      let fullStars = Math.floor(rating);
+      let halfStar = rating % 1 >= 0.5 ? 1 : 0;
+      let emptyStars = 5 - fullStars - halfStar;
+      
+      let stars = '';
+      for (let i = 0; i < fullStars; i++) {
+        stars += '<i class="fas fa-star"></i>';
+      }
+      if (halfStar) {
+        stars += '<i class="fas fa-star-half-alt"></i>';
+      }
+      for (let i = 0; i < emptyStars; i++) {
+        stars += '<i class="far fa-star"></i>';
+      }
+      return stars;
+    }
+
+    // Helper function to generate amenity badges
+    function generateAmenityBadges(amenities) {
+      const amenityIcons = {
+        'Wi-Fi': 'fas fa-wifi',
+        'Delivery': 'fas fa-motorcycle',
+        'Takeaway': 'fas fa-shopping-bag',
+        'Dine-in': 'fas fa-utensils',
+        'Outdoor': 'fas fa-chair',
+        'Family Friendly': 'fas fa-users',
+        'Pet Friendly': 'fas fa-paw',
+        'Parking Available': 'fas fa-parking',
+        'Wheelchair Accessible': 'fas fa-wheelchair',
+        'Veg Options': 'fas fa-leaf',
+        'Spicy': 'fas fa-fire',
+        'Hot': 'fas fa-mug-hot'
+      };
+      
+      return amenities.map(amenity => {
+        const icon = amenityIcons[amenity] || 'fas fa-check';
+        return `<span class="amenity-badge"><i class="${icon}"></i>${amenity}</span>`;
+      }).join('');
+    }
+
+    // Load restaurant data
+    async function loadRestaurant() {
+      try {
+        const response = await fetch('restaurant-cards.json');
+        const restaurants = await response.json();
+        const restaurant = restaurants.find(r => r.id === restaurantId);
+        
+        if (!restaurant) {
+          document.body.innerHTML = '<div class="container text-center py-5"><h1>Restaurant not found</h1><a href="index.html" class="btn btn-primary">Back to Home</a></div>';
+          return;
+        }
+
+        // Populate page content
+        document.title = `${restaurant.name} - Hidden Bites Nepal`;
+        document.getElementById('heroImage').src = restaurant.image;
+        document.getElementById('restaurantName').textContent = restaurant.name;
+        document.getElementById('restaurantHeadline').textContent = restaurant.headline || '';
+        document.getElementById('ratingStars').innerHTML = generateStars(restaurant.rating);
+        document.getElementById('ratingText').textContent = `${restaurant.rating} (${restaurant.reviewsCount} reviews)`;
+        
+        // Status badge
+        const statusClass = restaurant.status === 'open' ? 'bg-success' : 
+                           restaurant.status === 'closing-soon' ? 'bg-warning' : 'bg-secondary';
+        document.getElementById('statusBadge').className = `badge ${statusClass} fs-6`;
+        document.getElementById('statusBadge').textContent = restaurant.status.replace('-', ' ');
+
+        // Cuisine and tags
+        document.getElementById('cuisineList').textContent = restaurant.cuisine ? restaurant.cuisine.join(', ') : '';
+        document.getElementById('tagsList').textContent = restaurant.tags ? restaurant.tags.join(', ') : '';
+
+        // Address and distance
+        const address = restaurant.address ? 
+          `${restaurant.address.line1}, ${restaurant.address.city}, ${restaurant.address.country}` : '';
+        document.getElementById('address').textContent = address;
+        document.getElementById('distance').textContent = restaurant.distanceKm ? `${restaurant.distanceKm} km away` : '';
+
+        // Hours
+        const hoursDiv = document.getElementById('hoursList');
+        if (restaurant.hours) {
+          hoursDiv.innerHTML = Object.entries(restaurant.hours)
+            .map(([day, time]) => `<div><strong>${day}:</strong> ${time}</div>`)
+            .join('');
+        }
+
+        // Contact
+        document.getElementById('phone').textContent = restaurant.contact?.phone || 'Not available';
+        document.getElementById('website').textContent = restaurant.contact?.website || 'Not available';
+        document.getElementById('priceRange').textContent = restaurant.priceRange || 'Not specified';
+
+        // Menu highlights
+        const menuDiv = document.getElementById('menuHighlights');
+        if (restaurant.menuHighlights && restaurant.menuHighlights.length > 0) {
+          menuDiv.innerHTML = restaurant.menuHighlights.map(item => 
+            `<div class="col-md-6 mb-3">
+              <div class="d-flex justify-content-between">
+                <span>${item.name}</span>
+                <span class="fw-bold">Rs ${item.price}</span>
+              </div>
+            </div>`
+          ).join('');
+        } else {
+          menuDiv.innerHTML = '<p class="text-muted">Menu details coming soon</p>';
+        }
+
+        // Amenities
+        document.getElementById('amenitiesList').innerHTML = generateAmenityBadges(restaurant.amenities || []);
+
+        // Action buttons
+        if (restaurant.contact?.phone) {
+          document.getElementById('callBtn').href = `tel:${restaurant.contact.phone}`;
+        }
+        if (restaurant.contact?.website) {
+          document.getElementById('websiteBtn').href = restaurant.contact.website;
+        }
+        if (restaurant.coordinates?.lat && restaurant.coordinates?.lng) {
+          document.getElementById('directionsBtn').href = 
+            `https://www.google.com/maps/dir/?api=1&destination=${restaurant.coordinates.lat},${restaurant.coordinates.lng}`;
+        }
+
+      } catch (error) {
+        console.error('Error loading restaurant:', error);
+        document.body.innerHTML = '<div class="container text-center py-5"><h1>Error loading restaurant</h1><a href="index.html" class="btn btn-primary">Back to Home</a></div>';
+      }
+    }
+
+    // Load restaurant when page loads
+    if (restaurantId) {
+      loadRestaurant();
+    } else {
+      document.body.innerHTML = '<div class="container text-center py-5"><h1>No restaurant selected</h1><a href="index.html" class="btn btn-primary">Back to Home</a></div>';
+    }
+  </script>
+</body>
+</html>
