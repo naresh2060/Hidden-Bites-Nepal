@@ -10,16 +10,22 @@
   <link rel="stylesheet" href="style.css">
   <!-- Font Awesome v5.15.4 (CDN) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-  <script src="styles/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous"></script>
+  <script src="styles/bootstrap.bundle.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
 
-
+  <style>
+    .amenities i {
+      color: #1f85e6;
+    }
+    .amenities {
+      color: #000;
+    }
+  </style>
+  
 </head>
 
 <body>
@@ -30,9 +36,11 @@
 
         <!-- Contact Info -->
         <div class="contact-info d-flex">
-          <a href="mailto:hiddenbitesnepal@gmail.com" class="text-decoration-none text-dark">
+          <a href="mailto:hiddenbitesnepal@gmail.com?subject=Hidden%20Bites%20Inquiry&body=Hello%2C%20I%20would%20like%20to%20know%20more%20about..."
+            class="text-decoration-none text-dark">
             <i class="fas fa-envelope"></i> hiddenbitesnepal@gmail.com
           </a>
+
           <span>
             <i class="fas fa-mobile-alt me-1"></i><span id="phoneCode">+977 </span>9812345678
           </span>
@@ -115,66 +123,55 @@
     </div>
     <!-- <div class="filterBar">Filter</div> -->
 
+    <!-- <img src="images/newari.jpg" class="card-img-top" alt="Newari"
+              style="width: 100%; height: clamp(160px, 22vw, 220px); object-fit: cover;"> -->
+
 
     <div class="foodSpot">
       <h2 class="text-center sub-heading-text ">Food Spots</h2>
 
-      <div class="container " id="foodSpotCardContainer">
-        <div class="row g-4 justify-content-center justify-content-lg-start">
-
-
-<div class="card col-12 col-md-6 col-lg-4" style="width: 18rem;">
-  <img src="images/newari.jpg" class="card-img-top" alt="Newari" style="width: 100%; height: clamp(160px, 22vw, 220px); object-fit: cover;">
-  <div class="card-body d-flex flex-column">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-    <div class="d-flex justify-content-between align-items-center mt-auto">
-      <span class="fw-bold">Rs 350</span>
-      <a href="#" class="btn btn-sm btn-outline-primary">View more</a>
-    </div>
-  </div>
-  
-</div>
-
-<div class="card col-12 col-md-6 col-lg-4" style="width: 18rem;">
-  <img src="images/momo.jpg" class="card-img-top" alt="MoMo" style="width: 100%; height: clamp(160px, 22vw, 220px); object-fit: cover;">
-  <div class="card-body d-flex flex-column">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-    <div class="d-flex justify-content-between align-items-center mt-auto">
-      <span class="fw-bold">Rs 180</span>
-      <a href="#" class="btn btn-sm btn-outline-primary">View more</a>
-    </div>
-  </div>
-  
-</div>
-
-<div class="card col-12 col-md-6 col-lg-4" style="width: 18rem;">
-  <img src="images/thakali.jpeg" class="card-img-top" alt="Thakali" style="width: 100%; height: clamp(160px, 22vw, 220px); object-fit: cover;">
-  <div class="card-body d-flex flex-column">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-    <div class="d-flex justify-content-between align-items-center mt-auto">
-      <span class="fw-bold">Rs 450</span>
-      <a href="#" class="btn btn-sm btn-outline-primary">View more</a>
-    </div>
-  </div>
-  
-</div>
-
+      <div class="container " >
+        <div class="row ">
+          <div class="row g-3 row-cols-1 row-cols-md-2 row-cols-lg-3" id="restaurant-list">
+    
+          </div>
 
         </div>
+
+        <!-- Pagination -->
+        <nav aria-label="Page navigation example ">
+          <ul class="pagination justify-content-center mt-5">
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
 
 
       </div>
 
     </div>
     <div class="addSpot container-fluid" id="addSpot">
-      <h2 class="text-center sub-heading-text ">Contribute your Opinion</h2>
+        <h2 class="text-center sub-heading-text ">Contribute your Opinion</h2>
 
-      <div class=" addPlace container rounded hover-zoom " id="addPlace">
+   
+
+      <div class=" addPlace container rounded hover-zoom cursor-pointer" id="addPlace" onclick="window.location.href='addRestaurant.html'">
         <p>Know a hidden Gem? <br> Add your Spot Now.</p><i class="fas fa-plus d-md-none"></i>
 
       </div>
 
-      
+
     </div>
     <div class="footer">
       <footer class="bg-dark text-light pt-4">
@@ -338,6 +335,94 @@
         select.options[2].text = 'LLP';
       }
     }
+
+
+    // Helper function to generate star icons based on rating
+function generateStars(rating) {
+  let fullStars = Math.floor(rating);
+  let halfStar = rating % 1 >= 0.5 ? 1 : 0;
+  let emptyStars = 5 - fullStars - halfStar;
+  return '<span>' +
+         '<i class="fas fa-star"></i>'.repeat(fullStars) +
+         '<i class="fas fa-star-half-alt"></i>'.repeat(halfStar) +
+         '<i class="far fa-star"></i>'.repeat(emptyStars) +
+         '</span>';
+}
+
+// Helper function to generate amenities with icons
+function generateAmenities(amenities) {
+  const amenityIcons = {
+    'Wi-Fi': 'fas fa-wifi',
+    'Delivery': 'fas fa-motorcycle',
+    'Takeaway': 'fas fa-shopping-bag',
+    'Dine-in': 'fas fa-utensils',
+    'Outdoor': 'fas fa-chair',
+    'Family Friendly': 'fas fa-users',
+    'Pet Friendly': 'fas fa-paw',
+    'Parking Available': 'fas fa-parking',
+    'Wheelchair Accessible': 'fas fa-wheelchair',
+    'Veg Options': 'fas fa-leaf',
+    'Spicy': 'fas fa-fire',
+    'Hot': 'fas fa-mug-hot',
+    'Map': 'fas fa-map-marker-alt'
+  };
+  
+  return amenities.slice(0, 4).map(amenity => {
+    const icon = amenityIcons[amenity] || 'fas fa-check';
+    return `<span class="small"><i class="${icon} me-1"></i>${amenity}</span>`;
+  }).join('');
+}
+
+
+// Fetch and render restaurant cards from JSON with proper Bootstrap columns
+const restaurantList = document.getElementById('restaurant-list');
+fetch('restaurant-cards.json')
+  .then(response => response.json())
+  .then(restaurants => {
+    restaurants.forEach((item) => {
+      const col = document.createElement('div');
+      col.className = 'col';
+
+      const card = document.createElement('div');
+      card.className = 'card shadow-sm h-100';
+
+      const statusClass = item.status === 'open' ? 'bg-success' : (item.status === 'closing-soon' ||item.status ==='close' ? 'bg-danger' : 'bg-secondary');
+      const cuisines = Array.isArray(item.cuisine) ? item.cuisine.join(' • ') : '';
+      const rating = item.rating ?? '';
+      const reviews = item.reviewsCount ?? '';
+      const priceRange = item.priceRange ?? '';
+
+      card.innerHTML = `
+        <img src="${item.image}" alt="${item.name}" style="width:100%; height: clamp(160px, 22vw, 220px); object-fit: cover;" />
+        <div class="card-body d-flex flex-column">
+          <div class="d-flex justify-content-between align-items-start mb-2">
+            <h6 class="mb-0">${item.name}</h6>
+            <span class="badge ${statusClass}">${item.status ? item.status.replace('-', ' ') : ''}</span>
+          </div>
+          <div class="text-muted small">${cuisines}</div>
+          ${generateStars(rating)}
+          
+          <div class="d-flex justify-content-between align-items-center mt-3">
+            <span class="fw-bold">${priceRange}</span>
+            <a class="btn btn-sm btn-outline-primary" href="restaurant-detail.html?id=${item.id}">View</a>
+          </div>
+           <div class="d-flex justify-content-between align-items-center mt-3 amenities"> 
+             ${generateAmenities(item.amenities || [])}
+           </div>
+        </div>
+      `;
+
+      col.appendChild(card);
+      restaurantList.appendChild(col);
+    });
+  })
+
+
+
+  
+  .catch(() => {});
+
+
 
     // Update on page load
     updateOptions();
