@@ -8,6 +8,10 @@
 
   <link rel="stylesheet" href="styles/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="animation.css">
+  <script defer src="animation.js"></script>
+
+  <link rel="stylesheet" href="utilityStyles.css">
   <!-- Font Awesome v5.15.4 (CDN) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
   <script src="styles/bootstrap.bundle.min.js"></script>
@@ -24,6 +28,7 @@
     .amenities {
       color: #000;
     }
+    
   </style>
   
 </head>
@@ -88,13 +93,13 @@
     </div>
 
 
-    <div class="category container">
+    <div class="category container fade-in-element">
       <h2 class="text-center sub-heading-text">Categories</h2>
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 justify-content-center" id="category-list">
       </div>
     </div>
 
-    <div class="featuredTrails">
+    <div class="featuredTrails fade-in-element">
       <h2 class="text-center sub-heading-text ">Featured Trails</h2>
       <div id="carouselExampleCaptions" class="carousel slide">
         <div class="carousel-indicators">
@@ -127,7 +132,7 @@
               style="width: 100%; height: clamp(160px, 22vw, 220px); object-fit: cover;"> -->
 
 
-    <div class="foodSpot">
+    <div class="foodSpot fade-in-element">
       <h2 class="text-center sub-heading-text ">Food Spots</h2>
 
       <div class="container " >
@@ -161,7 +166,7 @@
       </div>
 
     </div>
-    <div class="addSpot container-fluid" id="addSpot">
+    <div class="addSpot container-fluid fade-in-element" id="addSpot">
         <h2 class="text-center sub-heading-text ">Contribute your Opinion</h2>
 
    
@@ -173,7 +178,7 @@
 
 
     </div>
-    <div class="footer">
+    <div class="footer fade-in-element">
       <footer class="bg-dark text-light pt-4">
         <div class="container">
           <div class="row">
@@ -279,7 +284,7 @@
     var category_list = document.getElementById("category-list");
     category.forEach(cat => {
       const item = document.createElement("div");
-      item.className = "col text-center ";
+      item.className = "col text-center appear";
 
       item.innerHTML = `
     <div class="position-relative p-3 rounded category-item hover-zoom hover-bg-zoom" 
@@ -394,15 +399,17 @@ fetch('restaurant-cards.json')
 
       card.innerHTML = `
         <img src="${item.image}" alt="${item.name}" style="width:100%; height: clamp(160px, 22vw, 220px); object-fit: cover;" />
-        <div class="card-body d-flex flex-column">
-          <div class="d-flex justify-content-between align-items-start mb-2">
-            <h6 class="mb-0">${item.name}</h6>
+        <div class="card-body d-flex flex-column ">
+          <div class="d-flex justify-content-between align-items-start mb-2 ">
+            <h6 class="mb-0 ">${item.name}</h6>
             <span class="badge ${statusClass}">${item.status ? item.status.replace('-', ' ') : ''}</span>
           </div>
           <div class="text-muted small">${cuisines}</div>
+
+          
           ${generateStars(rating)}
           
-          <div class="d-flex justify-content-between align-items-center mt-3">
+          <div class="d-flex justify-content-between align-items-center mt-3 ">
             <span class="fw-bold">${priceRange}</span>
             <a class="btn btn-sm btn-outline-primary" href="restaurant-detail.html?id=${item.id}">View</a>
           </div>

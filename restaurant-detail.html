@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Restaurant Details - Hidden Bites Nepal</title>
-  
+
   <link rel="stylesheet" href="styles/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-  
+  <link rel="stylesheet" href="utilityStyles.css">
+
   <style>
     .hero-image {
       height: 400px;
       object-fit: cover;
       width: 100%;
     }
+
     .detail-card {
       border-radius: 15px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
+
     .amenity-badge {
       background-color: #f8f9fa;
       border: 1px solid #dee2e6;
@@ -27,18 +31,22 @@
       margin: 4px;
       display: inline-block;
     }
+
     .amenity-badge i {
       color: #1f85e6;
       margin-right: 8px;
     }
+
     .rating-stars {
       color: #f4c150;
     }
+
     .price-highlight {
       font-size: 1.2em;
       color: #28a745;
       font-weight: bold;
     }
+
     .back-btn {
       position: fixed;
       top: 20px;
@@ -57,8 +65,8 @@
     <!-- Hero Image -->
     <div class="position-relative">
       <img id="heroImage" class="hero-image" src="" alt="Restaurant" />
-      <div class="position-absolute top-0 start-0 w-100 h-100" 
-           style="background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);"></div>
+      <div class="position-absolute top-0 start-0 w-100 h-100"
+        style="background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);"></div>
       <div class="position-absolute bottom-0 start-0 text-white p-4">
         <h1 id="restaurantName" class="display-4 fw-bold mb-2"></h1>
         <p id="restaurantHeadline" class="fs-5 mb-3"></p>
@@ -81,7 +89,8 @@
                 <i class="fas fa-info-circle text-primary me-2"></i>About
               </h3>
               <p id="restaurantDescription" class="card-text">
-                Experience authentic flavors in a cozy atmosphere. This restaurant offers a unique dining experience with traditional recipes passed down through generations.
+                Experience authentic flavors in a cozy atmosphere. This restaurant offers a unique dining experience
+                with traditional recipes passed down through generations.
               </p>
               <div class="row mt-4">
                 <div class="col-md-6">
@@ -127,7 +136,7 @@
           <div class="card detail-card mb-4">
             <div class="card-body p-4">
               <h4 class="card-title mb-3">Quick Info</h4>
-              
+
               <div class="mb-3">
                 <h6><i class="fas fa-map-marker-alt text-primary me-2"></i>Location</h6>
                 <p id="address" class="text-muted mb-0"></p>
@@ -167,6 +176,12 @@
               <a id="websiteBtn" href="#" class="btn btn-outline-secondary btn-lg w-100" target="_blank">
                 <i class="fas fa-globe me-2"></i>Visit Website
               </a>
+              <div class="social-links-md d-md-flex align-items-center gap-3 justify-content-center mt-4">
+                <a href="#" id="facebook-link" class=""><i class="fab fa-facebook-f"></i></a>
+                <a href="#"  class="twitter-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" id="instagram-link" class=""><i class="fab fa-instagram"></i></a>
+                <a href="#" class="linkedin-link"><i class="fab fa-linkedin-in"></i></a>
+              </div>
             </div>
           </div>
         </div>
@@ -184,7 +199,7 @@
       let fullStars = Math.floor(rating);
       let halfStar = rating % 1 >= 0.5 ? 1 : 0;
       let emptyStars = 5 - fullStars - halfStar;
-      
+
       let stars = '';
       for (let i = 0; i < fullStars; i++) {
         stars += '<i class="fas fa-star"></i>';
@@ -214,7 +229,7 @@
         'Spicy': 'fas fa-fire',
         'Hot': 'fas fa-mug-hot'
       };
-      
+
       return amenities.map(amenity => {
         const icon = amenityIcons[amenity] || 'fas fa-check';
         return `<span class="amenity-badge"><i class="${icon}"></i>${amenity}</span>`;
@@ -227,7 +242,7 @@
         const response = await fetch('restaurant-cards.json');
         const restaurants = await response.json();
         const restaurant = restaurants.find(r => r.id === restaurantId);
-        
+
         if (!restaurant) {
           document.body.innerHTML = '<div class="container text-center py-5"><h1>Restaurant not found</h1><a href="index.html" class="btn btn-primary">Back to Home</a></div>';
           return;
@@ -240,10 +255,29 @@
         document.getElementById('restaurantHeadline').textContent = restaurant.headline || '';
         document.getElementById('ratingStars').innerHTML = generateStars(restaurant.rating);
         document.getElementById('ratingText').textContent = `${restaurant.rating} (${restaurant.reviewsCount} reviews)`;
-        
+
+
+
+        const socialLinks = [
+  { id: 'facebook-link', key: 'facebook' },
+  { id: 'instagram-link', key: 'instagram' },
+  { id: 'twitter-link', key: 'twitter' },
+  { id: 'linkedin-link', key: 'linkedin' }
+];
+
+socialLinks.forEach(link => {
+  const element = document.getElementById(link.id);
+  if (element && restaurant?.social?.[link.key]) {
+    element.href = restaurant.social[link.key];
+    element.target='_blank';
+  } else if (element) {
+    element.style.display = 'none'; // hide if no link
+  }
+});
+
         // Status badge
-        const statusClass = restaurant.status === 'open' ? 'bg-success' : 
-                           restaurant.status === 'closing-soon' ? 'bg-warning' : 'bg-secondary';
+        const statusClass = restaurant.status === 'open' ? 'bg-success' :
+          restaurant.status === 'closing-soon' ? 'bg-warning' : 'bg-secondary';
         document.getElementById('statusBadge').className = `badge ${statusClass} fs-6`;
         document.getElementById('statusBadge').textContent = restaurant.status.replace('-', ' ');
 
@@ -252,7 +286,7 @@
         document.getElementById('tagsList').textContent = restaurant.tags ? restaurant.tags.join(', ') : '';
 
         // Address and distance
-        const address = restaurant.address ? 
+        const address = restaurant.address ?
           `${restaurant.address.line1}, ${restaurant.address.city}, ${restaurant.address.country}` : '';
         document.getElementById('address').textContent = address;
         document.getElementById('distance').textContent = restaurant.distanceKm ? `${restaurant.distanceKm} km away` : '';
@@ -273,7 +307,7 @@
         // Menu highlights
         const menuDiv = document.getElementById('menuHighlights');
         if (restaurant.menuHighlights && restaurant.menuHighlights.length > 0) {
-          menuDiv.innerHTML = restaurant.menuHighlights.map(item => 
+          menuDiv.innerHTML = restaurant.menuHighlights.map(item =>
             `<div class="col-md-6 mb-3">
               <div class="d-flex justify-content-between">
                 <span>${item.name}</span>
@@ -296,7 +330,7 @@
           document.getElementById('websiteBtn').href = restaurant.contact.website;
         }
         if (restaurant.coordinates?.lat && restaurant.coordinates?.lng) {
-          document.getElementById('directionsBtn').href = 
+          document.getElementById('directionsBtn').href =
             `https://www.google.com/maps/dir/?api=1&destination=${restaurant.coordinates.lat},${restaurant.coordinates.lng}`;
         }
 
@@ -314,4 +348,9 @@
     }
   </script>
 </body>
+
 </html>
+
+
+
+
